@@ -25,9 +25,21 @@ Resource: Build an offline-first app - Android Developers - https://developer.an
 
 ## Networking
 
+5G network slicing creates multiple logical networks on shared physical infrastructure, each configured for different service needs. A dedicated responder slice could prioritize dispatch messages, voice, location updates, and incident video with defined latency, reliability, and capacity targets. The operator should enforce access controls and test isolation, congestion behavior, coverage, and failover. A slice improves resource management but cannot guarantee service if shared infrastructure or power fails.
+
+Resource: ETSI TS 123 501 - 5G; System architecture for the 5G System (5GS), clause 5.15 Network slicing - https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/18.11.00_60/ts_123501v181100p.pdf
+
 ## Cybersecurity
 
+Incident response is a continuous cycle: prepare capabilities and playbooks; detect and analyze suspicious activity; contain the threat; eradicate its cause; recover systems safely; and learn from the incident. During an attack, the operator should validate alerts, preserve evidence, isolate affected components without unnecessarily disabling emergency communications, remove malicious access, restore from trusted systems, and monitor for recurrence. Afterward, update controls and plans based on lessons learned. NIST’s current guidance integrates response across broader risk management.
+
+Resource: NIST SP 800-61 Rev. 3 - Incident Response Recommendations and Considerations for Cybersecurity Risk Management - https://csrc.nist.gov/pubs/sp/800/61/r3/final
+
 ## Data
+
+A star schema places a central fact table—such as usage events or data volume—beside dimensions for date and region. A snowflake schema normalizes one or more dimensions into related tables, reducing duplicated descriptive data but adding joins and complexity. For daily regional reports, a star schema is usually preferable because users can filter by region and date and aggregate measures simply. Define the fact table grain clearly, for example one record per region, date, and service metric.
+
+Resource: Understand star schema and the importance for Power BI - Microsoft Learn - https://learn.microsoft.com/en-us/power-bi/guidance/star-schema
 
 ## Misconception in My Track
 
