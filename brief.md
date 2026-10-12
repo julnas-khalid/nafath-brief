@@ -43,4 +43,8 @@ Resource: Understand star schema and the importance for Power BI - Microsoft Lea
 
 ## Misconception in My Track
 
+A common misconception is that “safe” and “idempotent” mean the same thing, so every idempotent request must be safe. They are different properties. Safe methods do not request a state change; idempotent methods may change state, but repeating the same request has the same intended effect as doing it once. DELETE and PUT are idempotent but are not safe. This distinction matters because automatic retries should not accidentally repeat actions with non-idempotent effects. The proof is in RFC 9110, Section 9.2.2, “Idempotent Methods”: “Of the request methods defined by this specification, PUT, DELETE, and safe request methods are idempotent.”
+
 ## Open Question
+
+Which retry policy and idempotency-key design will prevent duplicate dispatch actions when acknowledgements are lost during a network outage?
